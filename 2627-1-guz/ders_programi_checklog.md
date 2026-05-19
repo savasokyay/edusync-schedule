@@ -1,4 +1,4 @@
-# EduSync Audit Raporu — 2026-05-16 13:16:36
+# EduSync Audit Raporu — 2026-05-19 11:38:38
 
 **Schedule:** `mock_schedule.json`  
 **Dönem:** Güz (kaynak: data_path=guz)
@@ -63,7 +63,7 @@
 - ⚠ **SÖA** — nötr slota atama: `152113018-B` (Perşembe 16:00)
 - ⚠ **YA** — nötr slota atama: `503001516-A` (Salı 13:00)
 - ⚠ **ZC** — nötr slota atama: `152113020-B` (Salı 13:00)
-- ⚠ **ŞI** — nötr slota atama: `152113023-A` (Çarşamba 9:00)
+- ⚠ **ŞI** — nötr slota atama: `152113023-A` (Çarşamba 10:00)
 - ⚠ **ŞI** — nötr slota atama: `503011699-A` (Perşembe 9:00)
 - ✅ **AY** — tercih bildirimi yok, atama kabul
 - ✅ **ENY** — 2 tercih slotunda atama var
@@ -163,7 +163,7 @@
 - ✅ `151011213-A` → Çarşamba 19:00 ✅
 - ✅ `151011208-F` → Salı 17:00 ✅
 - ✅ `*-A` → Cuma 15:00 ✅
-- ✅ `152113026-A` → Çarşamba 15:00 ✅
+- ✅ `152113026-A` → Çarşamba 13:00 ✅
 - ✅ `*-*` → Cuma 9:00 ✅
 - ✅ `152117114-A` → Pazartesi 13:00 ✅
 - ✅ `152116013-A` → Pazartesi 16:00 ✅
