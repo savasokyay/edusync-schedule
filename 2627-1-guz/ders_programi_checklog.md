@@ -1,4 +1,4 @@
-# EduSync Audit Raporu — 2026-05-19 11:38:38
+# EduSync Audit Raporu — 2026-06-12 12:05:18
 
 **Schedule:** `mock_schedule.json`  
 **Dönem:** Güz (kaynak: data_path=guz)
@@ -9,11 +9,11 @@
 
 | Paket | ✅ PASS | ⚠ WARN | ❌ FAIL | ℹ INFO |
 |---|---|---|---|---|
-| Hocalar | 57 | 18 | 0 | 0 |
+| Hocalar | 54 | 16 | 0 | 1 |
 | Sabit Saat Kısıtları | 28 | 0 | 1 | 0 |
-| Müfredat | 58 | 0 | 2 | 9 |
+| Müfredat | 57 | 0 | 2 | 10 |
 | Özel Derslikler | 31 | 0 | 0 | 0 |
-| **TOPLAM** | **174** | **18** | **3** | **9** |
+| **TOPLAM** | **170** | **16** | **3** | **11** |
 
 ---
 
@@ -43,11 +43,11 @@
 
 </details>
 
-### Tercih Uyumu + Nötr Atamalar [⚠16 · ✅14]
+### Tercih Uyumu + Nötr Atamalar [⚠14 · ✅13]
 *Tercih edilen slotlara atama var mı? Nötr slotlara atama ⚠.*
 
 <details>
-<summary>⚠ 16 uyarı — detay</summary>
+<summary>⚠ 14 uyarı — detay</summary>
 
 - ⚠ **ED** — tercih var ama tercih slotuna atama yok
 - ⚠ **ED** — nötr slota atama: `152115037-A` (Perşembe 9:00)
@@ -55,8 +55,6 @@
 - ⚠ **ENY** — nötr slota atama: `152113022-A` (Cuma 10:00)
 - ⚠ **ESG** — nötr slota atama: `503002506-A` (Perşembe 15:00)
 - ⚠ **EÇ** — nötr slota atama: `503001508-A` (Salı 9:00)
-- ⚠ **MÖ** — nötr slota atama: `152115024-B` (Pazartesi 13:00)
-- ⚠ **MÖ** — nötr slota atama: `152115024-A` (Pazartesi 9:00)
 - ⚠ **SÖA** — nötr slota atama: `152113018-A` (Perşembe 14:00)
 - ⚠ **SÖA** — nötr slota atama: `503002513-A` (Çarşamba 9:00)
 - ⚠ **SÖA** — nötr slota atama: `152113025-A` (Salı 9:00)
@@ -65,12 +63,12 @@
 - ⚠ **ZC** — nötr slota atama: `152113020-B` (Salı 13:00)
 - ⚠ **ŞI** — nötr slota atama: `152113023-A` (Çarşamba 10:00)
 - ⚠ **ŞI** — nötr slota atama: `503011699-A` (Perşembe 9:00)
+- ℹ **MÖ** — schedule'da atama yok
 - ✅ **AY** — tercih bildirimi yok, atama kabul
 - ✅ **ENY** — 2 tercih slotunda atama var
 - ✅ **ESG** — 1 tercih slotunda atama var
 - ✅ **EÇ** — 2 tercih slotunda atama var
 - ✅ **KÖ** — 2 tercih slotunda atama var
-- ✅ **MÖ** — 2 tercih slotunda atama var
 - ✅ **NA** — 2 tercih slotunda atama var
 - ✅ **SO** — 2 tercih slotunda atama var
 - ✅ **SÖA** — 1 tercih slotunda atama var
@@ -82,17 +80,16 @@
 
 </details>
 
-### Akşam Tercihi [✅11]
+### Akşam Tercihi [✅10]
 *Akşam ders istemeyenlere 17:00+ atama var mı?*
 
 <details>
-<summary>✅ Geçti (11 öğe)</summary>
+<summary>✅ Geçti (10 öğe)</summary>
 
 - ✅ **AY** — akşam tercihi uyumlu (yok)
 - ✅ **ED** — akşam tercihi uyumlu (yok)
 - ✅ **ENY** — akşam tercihi uyumlu (yok)
 - ✅ **EÇ** — akşam tercihi uyumlu (yok)
-- ✅ **MÖ** — akşam tercihi uyumlu (yok)
 - ✅ **NA** — akşam tercihi uyumlu (yok)
 - ✅ **SO** — akşam tercihi uyumlu (yok)
 - ✅ **SÖA** — akşam tercihi uyumlu (yok)
@@ -102,7 +99,7 @@
 
 </details>
 
-### Gün Sayısı Hedefi [⚠2 · ✅13]
+### Gün Sayısı Hedefi [⚠2 · ✅12]
 *Hedef gün sayısına uyum (WP-79 formülü; pure-lab hariç, WP-92).*
 
 <details>
@@ -115,7 +112,6 @@
 - ✅ **ENY** — 1/1 gün (Perşembe)
 - ✅ **ESG** — 2/2 gün (Perşembe, Salı)
 - ✅ **EÇ** — 1/1 gün (Salı)
-- ✅ **MÖ** — 1/1 gün (Pazartesi)
 - ✅ **NA** — 2/2 gün (Pazartesi, Çarşamba)
 - ✅ **SO** — 2/2 gün (Cuma, Çarşamba)
 - ✅ **SÖA** — 2/2 gün (Salı, Çarşamba)
@@ -289,16 +285,16 @@
 
 </details>
 
-### 2024sablon — Seçmeli Torbaları (Güz) [✅4]
+### 2024sablon — Seçmeli Torbaları (Güz) [✅3]
 *Her torbadan beklenen ders sayısı açıldı mı?*
 
 <details>
-<summary>✅ Geçti (4 öğe)</summary>
+<summary>✅ 3 öğe — detay</summary>
 
+- ℹ **TS2** (TEKNİK SEÇMELİ 2): 1 ders açıldı — beklenti tanımlanmamış
 - ✅ **ADS** (ALAN DIŞI SEÇMELİ): 1 / 1 beklenen
 - ✅ **SS** (SOSYAL SEÇMELİ): 1 / 1 beklenen
-- ✅ **TSA** (TEKNİK SEÇMELİ A): 5 / 3 beklenen
-- ✅ **TSB** (TEKNİK SEÇMELİ B): 3 / 1 beklenen
+- ✅ **TS1** (TEKNİK SEÇMELİ 1): 7 / 4 beklenen
 
 </details>
 
