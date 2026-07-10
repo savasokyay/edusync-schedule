@@ -1,4 +1,4 @@
-# EduSync Audit Raporu — 2026-06-12 12:05:18
+# EduSync Audit Raporu — 2026-07-10 14:25:32
 
 **Schedule:** `mock_schedule.json`  
 **Dönem:** Güz (kaynak: data_path=guz)
@@ -9,11 +9,11 @@
 
 | Paket | ✅ PASS | ⚠ WARN | ❌ FAIL | ℹ INFO |
 |---|---|---|---|---|
-| Hocalar | 54 | 16 | 0 | 1 |
+| Hocalar | 53 | 18 | 0 | 1 |
 | Sabit Saat Kısıtları | 28 | 0 | 1 | 0 |
 | Müfredat | 57 | 0 | 2 | 10 |
 | Özel Derslikler | 31 | 0 | 0 | 0 |
-| **TOPLAM** | **170** | **16** | **3** | **11** |
+| **TOPLAM** | **169** | **18** | **3** | **11** |
 
 ---
 
@@ -43,11 +43,11 @@
 
 </details>
 
-### Tercih Uyumu + Nötr Atamalar [⚠14 · ✅13]
+### Tercih Uyumu + Nötr Atamalar [⚠16 · ✅12]
 *Tercih edilen slotlara atama var mı? Nötr slotlara atama ⚠.*
 
 <details>
-<summary>⚠ 14 uyarı — detay</summary>
+<summary>⚠ 16 uyarı — detay</summary>
 
 - ⚠ **ED** — tercih var ama tercih slotuna atama yok
 - ⚠ **ED** — nötr slota atama: `152115037-A` (Perşembe 9:00)
@@ -60,6 +60,8 @@
 - ⚠ **SÖA** — nötr slota atama: `152113025-A` (Salı 9:00)
 - ⚠ **SÖA** — nötr slota atama: `152113018-B` (Perşembe 16:00)
 - ⚠ **YA** — nötr slota atama: `503001516-A` (Salı 13:00)
+- ⚠ **ZC** — tercih var ama tercih slotuna atama yok
+- ⚠ **ZC** — nötr slota atama: `152117121-A` (Pazartesi 12:00)
 - ⚠ **ZC** — nötr slota atama: `152113020-B` (Salı 13:00)
 - ⚠ **ŞI** — nötr slota atama: `152113023-A` (Çarşamba 10:00)
 - ⚠ **ŞI** — nötr slota atama: `503011699-A` (Perşembe 9:00)
@@ -74,7 +76,6 @@
 - ✅ **SÖA** — 1 tercih slotunda atama var
 - ✅ **UG** — 2 tercih slotunda atama var
 - ✅ **YA** — 3 tercih slotunda atama var
-- ✅ **ZC** — 1 tercih slotunda atama var
 - ✅ **İD** — tercih bildirimi yok, atama kabul
 - ✅ **ŞI** — 2 tercih slotunda atama var
 
@@ -116,7 +117,7 @@
 - ✅ **SO** — 2/2 gün (Cuma, Çarşamba)
 - ✅ **SÖA** — 2/2 gün (Salı, Çarşamba)
 - ✅ **YA** — 3/3 gün (Perşembe, Salı, Çarşamba)
-- ✅ **ZC** — 2/2 gün (Salı, Çarşamba)
+- ✅ **ZC** — 2/2 gün (Pazartesi, Salı)
 - ✅ **İD** — 1/1 gün (Perşembe)
 - ✅ **ŞI** — 2/2 gün (Perşembe, Çarşamba)
 
@@ -161,10 +162,10 @@
 - ✅ `*-A` → Cuma 15:00 ✅
 - ✅ `152113026-A` → Çarşamba 13:00 ✅
 - ✅ `*-*` → Cuma 9:00 ✅
-- ✅ `152117114-A` → Pazartesi 13:00 ✅
+- ✅ `152117114-A` → Çarşamba 17:00 ✅
 - ✅ `152116013-A` → Pazartesi 16:00 ✅
 - ✅ `152116029-A` → Perşembe 9:00 ✅
-- ✅ `152117135-A` → Pazartesi 9:00 ✅
+- ✅ `152117005-A` → Pazartesi 9:00 ✅
 - ✅ `152117107-A` → Çarşamba 13:00 ✅
 - ✅ `152117127-A` → Salı 9:00 ✅
 - ✅ `152117117-A` → Cuma 14:00 ✅
