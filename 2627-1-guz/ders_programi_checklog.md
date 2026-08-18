@@ -1,4 +1,4 @@
-# EduSync Audit Raporu — 2026-07-10 14:25:32
+# EduSync Audit Raporu — 2026-08-18 14:43:58
 
 **Schedule:** `mock_schedule.json`  
 **Dönem:** Güz (kaynak: data_path=guz)
@@ -9,11 +9,11 @@
 
 | Paket | ✅ PASS | ⚠ WARN | ❌ FAIL | ℹ INFO |
 |---|---|---|---|---|
-| Hocalar | 53 | 18 | 0 | 1 |
-| Sabit Saat Kısıtları | 28 | 0 | 1 | 0 |
-| Müfredat | 57 | 0 | 2 | 10 |
-| Özel Derslikler | 31 | 0 | 0 | 0 |
-| **TOPLAM** | **169** | **18** | **3** | **11** |
+| Hocalar | 52 | 24 | 2 | 0 |
+| Sabit Saat Kısıtları | 24 | 0 | 4 | 0 |
+| Müfredat | 58 | 0 | 2 | 10 |
+| Özel Derslikler | 30 | 0 | 0 | 1 |
+| **TOPLAM** | **164** | **24** | **8** | **11** |
 
 ---
 
@@ -43,20 +43,24 @@
 
 </details>
 
-### Tercih Uyumu + Nötr Atamalar [⚠16 · ✅12]
+### Tercih Uyumu + Nötr Atamalar [⚠20 · ✅13]
 *Tercih edilen slotlara atama var mı? Nötr slotlara atama ⚠.*
 
 <details>
-<summary>⚠ 16 uyarı — detay</summary>
+<summary>⚠ 20 uyarı — detay</summary>
 
 - ⚠ **ED** — tercih var ama tercih slotuna atama yok
 - ⚠ **ED** — nötr slota atama: `152115037-A` (Perşembe 9:00)
+- ⚠ **ED** — nötr slota atama: `152115018-B` (Salı 13:00)
+- ⚠ **ED** — nötr slota atama: `152115018-A` (Salı 9:00)
+- ⚠ **ED** — nötr slota atama: `152115016-B` (Pazartesi 13:00)
 - ⚠ **ENY** — nötr slota atama: `152118634-A` (Perşembe 10:00)
 - ⚠ **ENY** — nötr slota atama: `152113022-A` (Cuma 10:00)
 - ⚠ **ESG** — nötr slota atama: `503002506-A` (Perşembe 15:00)
 - ⚠ **EÇ** — nötr slota atama: `503001508-A` (Salı 9:00)
+- ⚠ **SO** — nötr slota atama: `152117117-A` (Salı 14:00)
+- ⚠ **SO** — nötr slota atama: `152115018-F` (Salı 17:00)
 - ⚠ **SÖA** — nötr slota atama: `152113018-A` (Perşembe 14:00)
-- ⚠ **SÖA** — nötr slota atama: `503002513-A` (Çarşamba 9:00)
 - ⚠ **SÖA** — nötr slota atama: `152113025-A` (Salı 9:00)
 - ⚠ **SÖA** — nötr slota atama: `152113018-B` (Perşembe 16:00)
 - ⚠ **YA** — nötr slota atama: `503001516-A` (Salı 13:00)
@@ -65,15 +69,15 @@
 - ⚠ **ZC** — nötr slota atama: `152113020-B` (Salı 13:00)
 - ⚠ **ŞI** — nötr slota atama: `152113023-A` (Çarşamba 10:00)
 - ⚠ **ŞI** — nötr slota atama: `503011699-A` (Perşembe 9:00)
-- ℹ **MÖ** — schedule'da atama yok
 - ✅ **AY** — tercih bildirimi yok, atama kabul
 - ✅ **ENY** — 2 tercih slotunda atama var
 - ✅ **ESG** — 1 tercih slotunda atama var
 - ✅ **EÇ** — 2 tercih slotunda atama var
 - ✅ **KÖ** — 2 tercih slotunda atama var
+- ✅ **MÖ** — 1 tercih slotunda atama var
 - ✅ **NA** — 2 tercih slotunda atama var
-- ✅ **SO** — 2 tercih slotunda atama var
-- ✅ **SÖA** — 1 tercih slotunda atama var
+- ✅ **SO** — 1 tercih slotunda atama var
+- ✅ **SÖA** — 2 tercih slotunda atama var
 - ✅ **UG** — 2 tercih slotunda atama var
 - ✅ **YA** — 3 tercih slotunda atama var
 - ✅ **İD** — tercih bildirimi yok, atama kabul
@@ -81,8 +85,10 @@
 
 </details>
 
-### Akşam Tercihi [✅10]
+### Akşam Tercihi [❌1 · ✅10]
 *Akşam ders istemeyenlere 17:00+ atama var mı?*
+
+- ❌ **SO** — akşam ders istemedi, 1 akşam ataması var
 
 <details>
 <summary>✅ Geçti (10 öğe)</summary>
@@ -91,8 +97,8 @@
 - ✅ **ED** — akşam tercihi uyumlu (yok)
 - ✅ **ENY** — akşam tercihi uyumlu (yok)
 - ✅ **EÇ** — akşam tercihi uyumlu (yok)
+- ✅ **MÖ** — akşam tercihi uyumlu (yok)
 - ✅ **NA** — akşam tercihi uyumlu (yok)
-- ✅ **SO** — akşam tercihi uyumlu (yok)
 - ✅ **SÖA** — akşam tercihi uyumlu (yok)
 - ✅ **UG** — akşam tercihi uyumlu (yok)
 - ✅ **YA** — akşam tercihi uyumlu (yok)
@@ -100,25 +106,27 @@
 
 </details>
 
-### Gün Sayısı Hedefi [⚠2 · ✅12]
+### Gün Sayısı Hedefi [❌1 · ⚠4 · ✅10]
 *Hedef gün sayısına uyum (WP-79 formülü; pure-lab hariç, WP-92).*
 
-<details>
-<summary>⚠ 2 uyarı — detay</summary>
-
+- ⚠ **ED** — 2/1 gün (fark ±1) (Pazartesi, Perşembe)
 - ⚠ **KÖ** — 1/2 gün (fark ±1) (Pazartesi)
+- ⚠ **MÖ** — 0/1 gün (fark ±1) 
 - ⚠ **UG** — 2/1 gün (fark ±1) (Salı, Çarşamba)
+- ❌ **İD** — 3/1 gün (fark +2) (Perşembe, Salı, Çarşamba)
+
+<details>
+<summary>✅ Geçti (10 öğe)</summary>
+
 - ✅ **AY** — 2/2 gün (Pazartesi, Perşembe)
-- ✅ **ED** — 1/1 gün (Perşembe)
 - ✅ **ENY** — 1/1 gün (Perşembe)
 - ✅ **ESG** — 2/2 gün (Perşembe, Salı)
 - ✅ **EÇ** — 1/1 gün (Salı)
 - ✅ **NA** — 2/2 gün (Pazartesi, Çarşamba)
-- ✅ **SO** — 2/2 gün (Cuma, Çarşamba)
-- ✅ **SÖA** — 2/2 gün (Salı, Çarşamba)
+- ✅ **SO** — 2/2 gün (Salı, Çarşamba)
+- ✅ **SÖA** — 2/2 gün (Perşembe, Salı)
 - ✅ **YA** — 3/3 gün (Perşembe, Salı, Çarşamba)
 - ✅ **ZC** — 2/2 gün (Pazartesi, Salı)
-- ✅ **İD** — 1/1 gün (Perşembe)
 - ✅ **ŞI** — 2/2 gün (Perşembe, Çarşamba)
 
 </details>
@@ -130,7 +138,7 @@
 <summary>✅ Geçti (4 öğe)</summary>
 
 - ✅ `152113020` — şubeler aynı gün: Salı | ESG(152113020-A), ZC(152113020-B)
-- ✅ `152115016` — şubeler aynı gün: Pazartesi | AY(152115016-A), SBK(152115016-B)
+- ✅ `152115016` — şubeler aynı gün: Pazartesi | AY(152115016-A), ED(152115016-B)
 - ✅ `152115026` — şubeler aynı gün: Çarşamba | UG(152115026-A), NA(152115026-B)
 - ✅ `152115037` — şubeler aynı gün: Perşembe | ED(152115037-A), YA(152115037-B)
 
@@ -140,11 +148,15 @@
 
 ## 🕐 Sabit Saat Kısıtları
 
-### Sabit Gün ve Saat [✅26]
+### Sabit Gün ve Saat [❌3 · ✅22]
 *Excel'de 'Sabit Gün ve Saat' kolonu doldurulan dersler doğru slota atandı mı?*
 
+- ❌ `152117005-A` — sabit slot var (`PAZARTESİ_0900_1200`), schedule'da **atama yok**
+- ❌ `152117127-A` — sabit slot var (`SALI_0900_1300`), schedule'da **atama yok**
+- ❌ `152117117-A` — beklenen Cuma 14:00, atanan Salı 14:00
+
 <details>
-<summary>✅ Geçti (26 öğe)</summary>
+<summary>✅ Geçti (22 öğe)</summary>
 
 - ✅ `152111017-A-P1` → Salı 13:00 ✅
 - ✅ `152111017-A-P2` → Çarşamba 11:00 ✅
@@ -165,12 +177,8 @@
 - ✅ `152117114-A` → Çarşamba 17:00 ✅
 - ✅ `152116013-A` → Pazartesi 16:00 ✅
 - ✅ `152116029-A` → Perşembe 9:00 ✅
-- ✅ `152117005-A` → Pazartesi 9:00 ✅
 - ✅ `152117107-A` → Çarşamba 13:00 ✅
-- ✅ `152117127-A` → Salı 9:00 ✅
-- ✅ `152117117-A` → Cuma 14:00 ✅
 - ✅ `503001504-A` → Pazartesi 13:00 ✅
-- ✅ `503001513-A` → Çarşamba 15:00 ✅
 - ✅ `501011101-C` → Salı 17:00 ✅
 
 </details>
@@ -214,24 +222,24 @@
 
 - ℹ **ADS** (ALAN DIŞI SEÇMELİ): 1 ders açıldı — beklenti tanımlanmamış
 - ℹ **SS** (SOSYAL SEÇMELİ): 1 ders açıldı — beklenti tanımlanmamış
-- ❌ **TSA** (TEKNİK SEÇMELİ A): 1 / 2 (1 eksik)
+- ❌ **TSA** (TEKNİK SEÇMELİ A): 0 / 2 (2 eksik)
 
 <details>
 <summary>✅ Geçti (3 öğe)</summary>
 
 - ✅ **TOS** (TEKNİK OLMAYAN SEÇMELİ): 2 / 2 beklenen
-- ✅ **TSB** (TEKNİK SEÇMELİ B): 4 / 1 beklenen
+- ✅ **TSB** (TEKNİK SEÇMELİ B): 2 / 1 beklenen
 - ✅ **TSC** (TEKNİK SEÇMELİ C): 3 / 1 beklenen
 
 </details>
 
-### 2024sablon — Zorunlu Dersler (Güz) [❌1 · ✅50]
+### 2024sablon — Zorunlu Dersler (Güz) [❌1 · ✅51]
 *Her zorunlu ders schedule'da atandı mı?*
 
 - ❌ `152113026` İŞ SAĞLIĞI VE GÜVENLİĞİ I [B] (Y3) — `152113024` dersine bağlı ama o ders de atanmamış
 
 <details>
-<summary>✅ Geçti (50 öğe)</summary>
+<summary>✅ Geçti (51 öğe)</summary>
 
 - ✅ `*` REKTÖRLÜK ALAN DIŞI SEÇMELİ [*] (YNone) — atandı
 - ✅ `*` SOSYAL SEÇMELİ I [A] (YNone) — atandı
@@ -275,6 +283,7 @@
 - ✅ `152115016` VERİ TABANI YÖNETİM SİSTEMLERİ [B] (Y5) — atandı
 - ✅ `152115018` VERİ TABANI YÖNETİM SİSTEMLERİ LAB. [A] (Y5) — atandı
 - ✅ `152115018` VERİ TABANI YÖNETİM SİSTEMLERİ LAB. [B] (Y5) — atandı
+- ✅ `152115018` VERİ TABANI YÖNETİM SİSTEMLERİ LAB. [F] (Y5) — atandı
 - ✅ `152115024` INTRODUCTION TO MICROCOMPUTERS [A] (Y5) — atandı
 - ✅ `152115024` INTRODUCTION TO MICROCOMPUTERS [B] (Y5) — atandı
 - ✅ `152115025` INTRODUCTION TO MICROCOMPUTERS LAB. [A] (Y5) — atandı
@@ -292,10 +301,10 @@
 <details>
 <summary>✅ 3 öğe — detay</summary>
 
-- ℹ **TS2** (TEKNİK SEÇMELİ 2): 1 ders açıldı — beklenti tanımlanmamış
+- ℹ **TS2** (TEKNİK SEÇMELİ 2): 3 ders açıldı — beklenti tanımlanmamış
 - ✅ **ADS** (ALAN DIŞI SEÇMELİ): 1 / 1 beklenen
 - ✅ **SS** (SOSYAL SEÇMELİ): 1 / 1 beklenen
-- ✅ **TS1** (TEKNİK SEÇMELİ 1): 7 / 4 beklenen
+- ✅ **TS1** (TEKNİK SEÇMELİ 1): 6 / 4 beklenen
 
 </details>
 
@@ -303,12 +312,14 @@
 
 ## 🏫 Özel Derslikler
 
-### Özel Derslik Ataması [✅31]
+### Özel Derslik Ataması [✅30]
 *Excel'de 'Özel Derslik' kolonu doldurulan dersler doğru odaya atandı mı?*
 
 <details>
-<summary>✅ Geçti (31 öğe)</summary>
+<summary>✅ 30 öğe — detay</summary>
 
+- ℹ `152117111-A` — beklenen derslik `LAB-364`, ama schedule'da atama yok (dersler paketi kontrol eder)
+- ✅ `151011215-E` → `ESUZEM` ✅
 - ✅ `152111011-A` → `LAB-361` ✅
 - ✅ `152111011-B` → `LAB-361` ✅
 - ✅ `152111021-A` → `LAB-361` ✅
@@ -321,19 +332,17 @@
 - ✅ `152113022-B` → `LAB-361` ✅
 - ✅ `152115018-A` → `LAB-361` ✅
 - ✅ `152115018-B` → `LAB-361` ✅
+- ✅ `152115018-F` → `LAB-361` ✅
 - ✅ `152115025-A` → `LAB-361` ✅
 - ✅ `152115025-B` → `LAB-361` ✅
 - ✅ `152117107-A` → `LAB-364` ✅
-- ✅ `152117111-A` → `LAB-364` ✅
 - ✅ `152117121-A` → `LAB-364` ✅
-- ✅ `152117127-A` → `LAB-364` ✅
+- ✅ `152118654-A` → `LAB-364` ✅
 - ✅ `503001501-A` → `384` ✅
 - ✅ `503001503-A` → `384` ✅
 - ✅ `503001504-A` → `384` ✅
 - ✅ `503001507-A` → `384` ✅
 - ✅ `503001508-A` → `384` ✅
-- ✅ `503001512-A` → `384` ✅
-- ✅ `503001513-A` → `384` ✅
 - ✅ `503001516-A` → `384` ✅
 - ✅ `503002506-A` → `384` ✅
 - ✅ `503002513-A` → `384` ✅
