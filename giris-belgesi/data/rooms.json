@@ -1,0 +1,63 @@
+{
+  "schema": "sgb-room-catalog",
+  "version": 1,
+  "generated_at": "2026-11-05T15:34:31+03:00",
+  "source": "sgb rooms",
+  "rooms": {
+    "360": {
+      "cols": 3,
+      "rows": 6,
+      "each": 1
+    },
+    "381": {
+      "cols": 4,
+      "rows": 6,
+      "each": 1
+    },
+    "382": {
+      "cols": 2,
+      "rows": 6,
+      "each": 1
+    },
+    "383": {
+      "cols": 2,
+      "rows": 6,
+      "each": 1
+    },
+    "384": {
+      "cols": 2,
+      "rows": 6,
+      "each": 1
+    },
+    "386": {
+      "cols": 3,
+      "rows": 9,
+      "each": 3
+    },
+    "387": {
+      "cols": 3,
+      "rows": 9,
+      "each": 3
+    },
+    "388": {
+      "cols": 3,
+      "rows": 9,
+      "each": 3
+    },
+    "390": {
+      "cols": 3,
+      "rows": 9,
+      "each": 3
+    },
+    "391": {
+      "cols": 3,
+      "rows": 9,
+      "each": 3
+    },
+    "392": {
+      "cols": 3,
+      "rows": 6,
+      "each": 1
+    }
+  }
+}

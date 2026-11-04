@@ -1,0 +1,231 @@
+/* WP-06 / WP-08: one stylesheet for the whole page. System fonts only (CSP allows no font files).
+   Colour roles, shared with the floor plan SVG: room red, column (x) green, row (y) blue.
+   The masthead is the dark blue of the university logo (the user's choice); the plan's board keeps its own slate. */
+
+:root {
+  --ink: #1F2933;
+  --ink-soft: #52606D;
+  --paper: #FFFFFF;
+  --panel: #F3F5F7;
+  --line: #D5DAE0;
+  --board: #33423C;
+  --masthead: #25327B;        /* the most frequent dark blue of the ESOGU logo; white on it is about 11.5:1 */
+  --masthead-ink: #FFFFFF;
+  --masthead-soft: #C9D3F0;
+  --masthead-edge: #8A97CC;
+  --room: #B3261E;
+  --x: #14632D;
+  --y: #1D4F9F;
+  --fatal-bg: #FDECEA;
+  --fatal-line: #B3261E;
+  --fatal-ink: #8C1D18;
+  --warn-bg: #FFF4D6;
+  --warn-line: #B7791F;
+  --warn-ink: #6B4A0B;
+  --info-bg: #E8F0FA;
+  --info-line: #1D4F9F;
+  --info-ink: #173B78;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+p, h1, h2, dl, dd { margin: 0; }
+
+.page { max-width: 1180px; margin: 0 auto; }
+
+/* --- masthead --------------------------------------------------------------------------------------- */
+
+.masthead {
+  background: var(--masthead);
+  color: var(--masthead-ink);
+  padding: 16px 20px 14px;
+  border-bottom: 5px solid var(--masthead-edge);
+}
+.masthead-title { font-size: 1.625rem; line-height: 1.2; font-weight: 700; }
+.masthead-exam { font-size: 0.9375rem; color: var(--masthead-soft); margin-top: 6px; }
+
+/* --- bands ----------------------------------------------------------------------------------------- */
+
+.bands { display: grid; gap: 8px; padding: 14px 16px 0; }
+.bands:empty { display: none; }
+
+.band {
+  border-left: 6px solid var(--info-line);
+  background: var(--info-bg);
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 0 4px 4px 0;
+}
+.band-title { font-weight: 700; }
+.band-text + .band-title, .band-title + .band-text { margin-top: 2px; }
+.band-fatal { background: var(--fatal-bg); border-left-color: var(--fatal-line); }
+.band-fatal .band-title { color: var(--fatal-ink); }
+.band-warning { background: var(--warn-bg); border-left-color: var(--warn-line); }
+.band-warning .band-title { color: var(--warn-ink); }
+.band-info .band-title { color: var(--info-ink); }
+.band-trailer { color: var(--ink-soft); font-size: 0.9375rem; padding: 0 2px; }
+
+/* --- layout: A | B on a wide landscape screen, A over B otherwise ---------------------------------- */
+
+.split { display: grid; gap: 0; padding: 16px; }
+.plan { border-top: 2px solid var(--line); margin-top: 24px; padding-top: 20px; }
+.split-single .plan { display: none; }
+.split > .page-footer { margin-top: 24px; padding: 18px 0 16px; border-top: 1px solid var(--line); }  /* portrait: last row, page width */
+
+/* WP-08: the footer is the third item of this grid (render-info.js). In portrait it is the last row at the full
+   width. On a wide landscape screen it moves under block A: column 1, row 2, the same width as A's text (the same
+   28 px right padding), so the disclaimer breaks where A's lines end. Block B spans both rows; row 2 is the flexible
+   one, so the footer sits right under A's facts whatever the height of B. */
+@media (orientation: landscape) and (min-width: 900px) and (min-height: 560px) {
+  .split { grid-template-columns: minmax(340px, 5fr) minmax(380px, 6fr); grid-template-rows: auto 1fr; padding: 20px 16px; }
+  .info { grid-column: 1; grid-row: 1; padding-right: 28px; }
+  .plan { grid-column: 2; grid-row: 1 / span 2; border-top: 0; margin-top: 0; padding-top: 0; padding-left: 28px; border-left: 2px solid var(--line); }
+  .split-single { grid-template-columns: minmax(340px, 720px); }
+  .split > .page-footer { grid-column: 1; grid-row: 2; align-self: start; margin-top: 20px; padding: 0 28px 0 0; border-top: 0; }
+}
+
+/* --- block A ---------------------------------------------------------------------------------------- */
+
+/* Designed for a phone in portrait first (360 to 430 px wide); wider screens only get more air.
+   Top of block A (student line and the big seat row) is centred; the facts below read from the left.
+   .info-top is a size container: the big type scales with ITS width (cqw), not the viewport's, so the same
+   three blocks fit the narrow column of the A | B layout and a 360 px phone alike. vw lines come first as the
+   fallback for a browser without container query units. */
+
+.info-top { text-align: center; margin-bottom: 20px; container-type: inline-size; }
+
+.who { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 2px 12px; margin-bottom: 12px; }
+.who-name { font-size: 1.125rem; overflow-wrap: anywhere; }
+.who-no { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+.ink-room { color: var(--room); }
+.ink-x { color: var(--x); }
+.ink-y { color: var(--y); }
+
+/* The big seat block: three blocks on ONE line at every width, never wrapped: room | desk | seat block.
+   The seat block has column | row on top (labels above values, column left, row right) and the seat
+   ("Sol (a)", "Sağ (b)", "Orta") under them. Every block starts with a label at the same height (items align to
+   the top), and the seat block ends where the room and desk blocks end: its two value lines are sized so that
+   its total height equals theirs.
+
+   The sizes are all derived from three numbers, set on .hero:
+     --f    the big value (room, desk)                  a share of the container width, capped
+     --lab  a label                                      a share of the container width, floor 11 px
+     --v    the seat block's two values, from the equal-height rule. Measured from the top of the block to the
+            baseline of its last line (that is what lines up with the baseline of the big digits):
+              room/desk    = 1.2 lab + c f                                 c = baseline offset in a 0.95 line box
+              seat block   = 2 * 1.2 lab + gap + 0.95 v + c v              (two labels, a gap, one value, then the last)
+              with gap = 0.25 lab:  v = (c f - 1.45 lab) / (0.95 + c)
+            c depends on the font (about 0.82 Roboto, 0.89 Segoe UI); the formula uses 0.85, good to about 2 px.
+            fit.js then measures the real baselines and sets --vk so the last baselines coincide exactly, in any font.
+            The blocks are top-aligned, so the labels share a top and the digits share a baseline.
+   Sizes follow the container (cqw), not the viewport, so the same three blocks fit the narrow column of the
+   A | B layout and a 320 px phone. The vw values are the fallback for a browser without container units. */
+.hero {
+  --f: clamp(2rem, 17.5vw, 5.75rem);
+  --lab: clamp(0.6875rem, 3.4vw, 0.9375rem);
+  --gap: clamp(8px, 4vw, 30px);
+  --vk: 1;   /* a multiplier that fit.js sets after measuring the real baselines; 1 without the script */
+  --v: max(0.875rem, calc((var(--f) * 0.472 - var(--lab) * 0.806) * var(--vk)));
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0 var(--gap);
+}
+@supports (width: 1cqw) {
+  .hero {
+    --f: clamp(2rem, 17.5cqw, 5.75rem);
+    --lab: clamp(0.6875rem, 3.4cqw, 0.9375rem);
+    --gap: clamp(8px, 4cqw, 30px);
+  }
+}
+.hero-item, .hero-seat { margin: 0; min-width: 0; flex: 0 1 auto; }
+.hero-label { display: block; font-size: var(--lab); color: var(--ink-soft); line-height: 1.2; margin: 0; white-space: nowrap; }
+.hero-value { display: block; font-weight: 800; line-height: 0.95; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* room and desk: the largest */
+.hero-room .hero-value, .hero-desk .hero-value { font-size: var(--f); letter-spacing: -0.02em; }
+/* a long room id such as D-101 (more than three characters) is set smaller so it still fits beside the desk */
+.hero-long .hero-value { font-size: calc(var(--f) * 0.6); }
+/* the seat alone as the third block (I4: a short seat string whose grid is unknown, no column and no row). "Sol (a)" is
+   far wider than a desk number, so its text is set as small as a long room id to keep the three blocks on one line.
+   The value box keeps the desk number's own size, though, and only the text inside it is smaller: the box's line is
+   then exactly as tall as the desk number's and has its baseline at the same place in any font, so the label stands
+   level with the others and the seat on the digits' baseline (K-20) without any measuring. */
+.hero-lone .hero-value { font-size: var(--f); }
+.hero-lone-text { font-size: 0.6em; letter-spacing: -0.01em; }
+
+/* the seat block, two forms (K-21), both two label lines and two value lines, so one sizing rule serves both:
+     seat letter in the string:  column | row on top, the seat ("Sol (a)" / "Sag (b)") under them
+     no letter (.hero-seat-stacked): the column (green) over the row (blue); no seat line, no word for the middle
+   Values sized by the equal-height rule above. The flex column below stacks the two rows of the first form
+   (.hero-axes, .hero-side) and the two items of the second alike. */
+.hero-seat { display: flex; flex-direction: column; align-items: center; gap: calc(var(--lab) * 0.25); }
+.hero-axes { display: flex; justify-content: center; align-items: flex-start; gap: 0 calc(var(--gap) * 0.8); }
+.hero-seat .hero-value { font-size: var(--v); }
+.hero-side .hero-value { letter-spacing: -0.01em; }
+
+.hero-plain { flex-direction: column; align-items: center; gap: 10px; }
+.hero-extra { font-size: 1.5rem; font-weight: 700; }
+.hero-note { color: var(--ink-soft); }
+/* kind unknown: the seat string exactly as it came, as text under a label of the size of the other labels; it may be
+   long and has no spaces to break at */
+.hero-unknown { margin: 0; max-width: 100%; min-width: 0; }
+.hero-raw { display: block; font-size: 1.375rem; font-weight: 700; max-width: 100%; overflow-wrap: anywhere; }
+
+.facts { border-top: 2px solid var(--line); }
+.fact {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 0 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+.fact dt { color: var(--ink-soft); font-size: 0.9375rem; padding-top: 1px; }
+.fact-main { display: block; font-weight: 600; }
+.fact-sub { display: block; color: var(--ink-soft); font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+
+/* --- block B ---------------------------------------------------------------------------------------- */
+
+.plan-title { font-size: 1.125rem; margin-bottom: 10px; }
+.plan-figure svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.plan-note { margin-top: 10px; color: var(--ink-soft); font-size: 0.9375rem; text-align: center; }
+.plan-mismatch {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: var(--warn-bg);
+  border-left: 4px solid var(--warn-line);
+  color: var(--warn-ink);
+  font-size: 0.9375rem;
+}
+
+/* --- footer ----------------------------------------------------------------------------------------- */
+
+/* WP-08: the width of the footer text is the width of the box it stands in, nothing else: no max-width, so the
+   lines fill that box and break where the words fall (no hand-set breaks).
+   In portrait the footer is the last row of .split, at the page width (the same side gutters as blocks A and B).
+   In landscape it is under block A and as wide as A's text (see the media query above).
+   A page without the blocks (fatal, message) has the footer as the last child of .page, full width. */
+.page-footer { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; }
+.page > .page-footer { padding: 18px 20px 32px; border-top: 1px solid var(--line); margin-top: 8px; }
+.footer-text { text-wrap: pretty; }  /* only keeps a lone word off the last line; every line still fills the box */
+.footer-version { margin-top: 10px; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+
+noscript { display: block; padding: 20px; }
+
+@media (max-width: 420px) {
+  .masthead { padding: 14px 16px 12px; }
+  .masthead-title { font-size: 1.4rem; }
+  .fact { grid-template-columns: 6.5rem minmax(0, 1fr); }
+  .split { padding: 14px 12px; }
+}
